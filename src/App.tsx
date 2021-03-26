@@ -1,35 +1,14 @@
 import * as React from "react";
-import {
-  Admin,
-  EditGuesser,
-  ListGuesser,
-  Resource,
-  ShowGuesser,
-} from "react-admin";
-import jsonServerProvider from "ra-data-json-server";
+import { Admin, Resource } from "react-admin";
+import fakeDataProvider from "ra-data-fakerest";
+import data from "./testData";
+import customers from "./views/customers";
 
-const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
+const dataProvider = fakeDataProvider(data);
 const App = () => {
   return (
     <Admin dataProvider={dataProvider}>
-      <Resource
-        list={ListGuesser}
-        edit={EditGuesser}
-        show={ShowGuesser}
-        name="users"
-      />
-      <Resource
-        list={ListGuesser}
-        edit={EditGuesser}
-        show={ShowGuesser}
-        name="posts"
-      />
-      <Resource
-        list={ListGuesser}
-        edit={EditGuesser}
-        show={ShowGuesser}
-        name="comments"
-      />
+      <Resource {...customers} name="customers" />
     </Admin>
   );
 };
