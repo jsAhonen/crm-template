@@ -1,7 +1,12 @@
 # CRM System Template
 
-This is a CRM system template created with React Admin library. Backend forthcoming ...
+This is a CRM system template created with React Admin library. The basic idea of this system is to manage customers' ordering workers to work at a chosen location they own.
 
-Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Current Status
 
-Yarn is the recommended package manager for this project.
+First draft of the frontend created with views for customers, workers, locations and orders.
+
+In the near future, I am planning to implement new features:
+
+- User roles for customers and workers.
+- Backend created with NestJS
