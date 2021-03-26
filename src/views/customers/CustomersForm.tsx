@@ -1,7 +1,7 @@
 import { SimpleForm, TextInput } from "ra-ui-materialui";
 
-export const CustomersForm = () => (
-  <SimpleForm>
+export const CustomersForm = (props: any) => (
+  <SimpleForm {...props}>
     <TextInput source="id" />
     <TextInput source="firstName" />
     <TextInput source="lastName" />

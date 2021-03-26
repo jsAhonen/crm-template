@@ -3,6 +3,6 @@ import { CustomersForm } from "./CustomersForm";
 
 export const CustomersEdit = (props: any) => (
   <Edit {...props}>
-    <CustomersForm />
+    <CustomersForm {...props} />
   </Edit>
 );
