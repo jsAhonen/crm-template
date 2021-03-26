@@ -26,8 +26,8 @@ export interface Order {
     title: string;
     status: OrderStatus;
     description: string;
-    location: Location;
-    workers: Worker[];
+    location: number;
+    workers: number[];
 }
 
 export interface Location {

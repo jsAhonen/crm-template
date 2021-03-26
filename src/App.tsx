@@ -5,6 +5,7 @@ import data from "./testData";
 import customers from "./views/customers";
 import workers from "./views/workers";
 import locations from "./views/locations";
+import orders from "./views/orders";
 
 const dataProvider = fakeDataProvider(data);
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <Resource {...customers} name="customers" />
       <Resource {...workers} name="workers" />
       <Resource {...locations} name="locations" />
+      <Resource {...orders} name="orders" />
     </Admin>
   );
 };

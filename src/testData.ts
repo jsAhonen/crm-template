@@ -1,5 +1,10 @@
 import * as faker from 'faker'
-import { Customer, Location, Worker } from './types'
+import { Customer, Location, Order, Worker } from './types'
+
+const numberOfCustomers = 5
+const numberOfWorkers = 5
+const numberOfLocations = 5
+const numberOfOrders = 5
 
 const generateCustomers = (number = 10) => {
     let customers: Customer[] = []
@@ -49,10 +54,27 @@ const generateLocations = (number = 10) => {
     return locations
 }
 
+const generateOrders = (number = 10) => {
+    let orders: Order[] = []
+    for (let i = 0; i < number; i++) {
+        orders.push({
+            id: i + 1,
+            date: faker.date.soon(),
+            title: faker.lorem.words(3),
+            status: faker.random.arrayElement(["UNHANDLED", "ACCEPTED", "DECLINED", "COMPLETED", "PAID"]),
+            description: faker.lorem.paragraph(),
+            location: faker.random.number(numberOfLocations),
+            workers: [faker.random.number(numberOfWorkers), faker.random.number(numberOfWorkers)],
+                })
+    }
+    return orders
+}
+
 let data = {
-    customers: generateCustomers(5),
-    workers: generateWorkers(5),
-    locations: generateLocations(5),
+    customers: generateCustomers(numberOfCustomers),
+    workers: generateWorkers(numberOfWorkers),
+    locations: generateLocations(numberOfLocations),
+    orders: generateOrders(numberOfOrders)
 }
 
 export default data
