@@ -4,6 +4,7 @@ import fakeDataProvider from "ra-data-fakerest";
 import data from "./testData";
 import customers from "./views/customers";
 import workers from "./views/workers";
+import locations from "./views/locations";
 
 const dataProvider = fakeDataProvider(data);
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
     <Admin dataProvider={dataProvider}>
       <Resource {...customers} name="customers" />
       <Resource {...workers} name="workers" />
+      <Resource {...locations} name="locations" />
     </Admin>
   );
 };

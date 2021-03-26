@@ -35,7 +35,7 @@ export interface Location {
     streetAddress: string;
     zipcode: string;
     city: string;
-    customer: Customer;
+    customer: number;
 }
 
 export type OrderStatus = "UNHANDLED" | "ACCEPTED" | "DECLINED" | "COMPLETED" | "PAID"
